@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/style,css.css"> -->
+    <link rel="stylesheet" href="../css/lab4.css">
+    <title>Simulasi Gerak Jatuh</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="judul">
+        <h1>Gerak Jatuh Bebas</h1>
+    </div>
+     
+
+    
+        <div class="container-kotak">
+            <div class="kotak">
+                <div class="bola" id="bola"></div>
+                <img id="gambar" src="../images/Medical Template (Poster).jpg" alt="Deskripsi Gambar">
+            </div>
+    
+            <div>
+                <h3>Hasil Percobaan:</h3>
+            <table id="tabelHasilPercobaan" border="1">
+                <tr>
+                    <th>Waktu (s)</th>
+                    <th>Posisi (Y)</th>
+                </tr>
+            </table>
+            </div>
+         </div>
+        <div class="controls">
+            <label for="inputKecepatan">Kecepatan (m/s):</label>
+            <input type="number" id="inputKecepatan" value="50" step="1">
+            <button id="btnMulai">Mulai</button>
+            <button id="btnReset">Reset</button>
+        </div>
+    
+        <div class="hasil-percobaan">
+            
+            <canvas id="grafikPercobaan" width="400" height="200"></canvas>
+            <div class="kotak-area">
+                <textarea id="inputRumus" class="rumus" placeholder="Rumusan Hipotesis..."></textarea>
+                <textarea id="inputKesimpulan" rows="5" class="kesimpulan" placeholder="Ketikkan kesimpulan disini..."></textarea>
+            </div>
+        </div>
+
+        <div class="menu-container">
+            <!-- Tombol pertama -->
+            <a href="tombol.html" class="menu-button">kembali</a>
+        </div>
+        <form id="formEmail">
+            <label for="penerima">Penerima:</label>
+            <input type="email" id="penerima" name="penerima" required>
+        
+            <label for="subjek">Subjek:</label>
+            <input type="text" id="subjek" name="subjek" required>
+        
+            <label for="pesan">Pesan:</label>
+            <textarea id="pesan" name="pesan" rows="4" required></textarea>
+        
+            <button type="submit">Kirim Email</button>
+          </form>
+    
+          <script>
+            document.getElementById('formEmail').addEventListener('submit', function (event) {
+              event.preventDefault();
+        
+              const penerima = document.getElementById('penerima').value;
+              const subjek = document.getElementById('subjek').value;
+              const pesan = document.getElementById('pesan').value;
+        
+              // Kirim data ke server backend
+              fetch('http://localhost:3000/kirim-email', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ penerima, subjek, pesan }),
+              })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+            });
+          </script>
+    <script src="../javascript/GJB.js"></script>
+    <script src="../javascript//email.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

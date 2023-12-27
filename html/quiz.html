@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- <link rel="stylesheet" href="../css/quiz.css"> 
+    <link rel="stylesheet" href="../css/style,css.css">
+    <link rel="stylesheet" href="../css/n.css">  -->
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Quiz Game</title>
+</head>
+<body>
+  
+   
+    <nav class="quiz-navbar">
+      <div class="logo">
+        <img src="../images/logo.png" width="50px" height="50px" alt="Logo">
+        <h1>Nadia Barakah</h1>
+    </div>
+      <ul class="nav-links">
+          
+          <li><a href="tombol.html" style="font-size: 2rem;">Kembali</a></li>
+    </nav>
+    
+
+<div class="card" id="quiz-container">
+    <h1>Gerak Jatuh Bebas Quiz</h1>
+    <div id="question-container"></div>
+    <div id="answer-buttons" class="btn-container"></div>
+    <button onclick="nextQuestion()" id="next-button" class="btn" style="display: none;">Selanjutnya</button>
+</div>
+<!-- Contoh elemen HTML untuk menampilkan skor -->
+<div id="score">Skor: 0</div>
+
+<style>
+    #score {
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(224, 231, 224);
+        position: absolute;
+        top: 65px; /* Atur jarak dari atas */
+        right: 50px; /* Atur jarak dari kanan */
+    }
+</style>
+
+<script src="../javascript/quiz1.js"></script>
+
+
+    <script src="../javascript/quiz1.js"></script>
+    <script src="../javascript/header.js"></script>
+</body>
+</html>

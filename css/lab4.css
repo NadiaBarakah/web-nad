@@ -1,0 +1,215 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  .judul {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    color: #555;
+  }
+  
+  /* Container untuk konten */
+  .container-kotak {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Kotak tempat bola jatuh */
+  .kotak {
+    position: relative;
+    width: 200px;
+    height: 230px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center; /* Tengahkan horizontal */
+  }
+
+  #tabelHasilPercobaan {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#tabelHasilPercobaan th {
+    background-color: #f7f7f7;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+#tabelHasilPercobaan td {
+    background-color: #fff;
+    color: #555;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+#tabelHasilPercobaan tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+  
+  /* Bola yang jatuh */
+  #bola {
+    position: absolute;
+    width: 40px;
+    height: 37px;
+    background-color: #3498db;
+    border-radius: 50%;
+    z-index: 2; /* Nilai z-index ditambahkan di sini */
+  }
+  
+  /* Animasi jatuh */
+  @keyframes fallAnimation {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Tombol dan input */
+  .controls {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  input[type="number"],
+  button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="number"]:focus,
+  button:focus {
+    outline: none;
+  }
+
+  /* Gaya Kartu (Card) Modern */
+.hasil-percobaan {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Gaya kartu untuk bagian dalam */
+  .kotak-area {
+    flex: 1 1 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Gaya untuk teks area */
+  textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    resize: vertical;
+  }
+  
+  /* Efek hover pada kartu */
+  .hasil-percobaan:hover,
+  .kotak-area:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #gambar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Nilai z-index ditambahkan di sini */
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Gaya untuk teks area dan tabel */
+  textarea, table {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  /* Menu container */
+  .menu-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .menu-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-button:hover {
+    background-color: #2980b9;
+  }
+  
+  #score {
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    position: absolute;
+    top: 10px; /* Atur jarak dari atas */
+    right: 10px; /* Atur jarak dari kanan */
+}
+
+#freeFallFormula {
+    font-size: 18px;
+    color: blue;
+    margin-top: 20px; /* Atur jarak dari atas */
+}
